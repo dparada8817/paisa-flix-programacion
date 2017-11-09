@@ -19,6 +19,9 @@ public class Pelicula extends Programa   {
   @JsonProperty("idPelicula")
   private String idPelicula = null;
 
+  public Pelicula() {
+  }
+
   public Pelicula idPelicula(String idPelicula) {
     this.idPelicula = idPelicula;
     return this;

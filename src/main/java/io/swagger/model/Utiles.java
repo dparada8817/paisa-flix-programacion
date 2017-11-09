@@ -140,6 +140,9 @@ public class Utiles {
     public void putCapitulo(String idSerie, Capitulo capitulo) {
         Serie serie = getSerie(idSerie);
         if(serie!=null) {
+          if(serie.getCapitulos()==null){
+            serie.setCapitulos(new ArrayList<Capitulo>());
+          }
             serie.getCapitulos().add(capitulo);
         }
     }
@@ -148,7 +151,10 @@ public class Utiles {
     List<Capitulo> capitulosEncontrados = new ArrayList<>();
     for(Serie prog :series){
       if(prog instanceof Serie && ((Serie) prog).getIdSerie().compareTo(idSerie) == 0) {
-        for (Capitulo cap : ((Serie) prog).getCapitulos()) {
+        if(prog.getCapitulos()==null){
+            prog.setCapitulos(new ArrayList<Capitulo>());
+        }
+        for (Capitulo cap :  prog.getCapitulos()) {
           capitulosEncontrados.add(cap);
         }
       }

@@ -34,6 +34,9 @@ public class Capitulo extends Programa {
     return this;
   }
 
+  public Capitulo() {
+  }
+
   public Capitulo(String idCapitulo, String idSerie) {
     this.idCapitulo = idCapitulo;
     add(linkTo(methodOn(SerieApiController.class).buscarCapituloPorId(getIdCapitulo(),idSerie)).withSelfRel());

@@ -35,6 +35,9 @@ public class Serie extends ResourceSupport {
   @JsonProperty("capitulos")
   private List<Capitulo> capitulos = null;
 
+  public Serie() {
+  }
+
   public Serie idSerie(String idSerie) {
     this.idSerie = idSerie;
     return this;
