@@ -5,14 +5,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.api.SerieApiController;
 import org.springframework.hateoas.ResourceSupport;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 /**
  * Capitulo
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-11-06T16:51:18.406Z")
 
-public class Capitulo extends ResourceSupport {
+public class Capitulo extends Programa {
   @JsonProperty("idCapitulo")
   private String idCapitulo = null;
 
@@ -28,6 +32,11 @@ public class Capitulo extends ResourceSupport {
   public Capitulo idCapitulo(String idCapitulo) {
     this.idCapitulo = idCapitulo;
     return this;
+  }
+
+  public Capitulo(String idCapitulo, String idSerie) {
+    this.idCapitulo = idCapitulo;
+    add(linkTo(methodOn(SerieApiController.class).buscarCapituloPorId(getIdCapitulo(),idSerie)).withSelfRel());
   }
 
   /**

@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-11-07T01:01:59.715Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-11-09T01:33:59.673Z")
 
 @Api(value = "pelicula", description = "the pelicula API")
 public interface PeliculaApi {
@@ -48,7 +48,7 @@ public interface PeliculaApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<Void> crearActualizarPelicula(@ApiParam(value = "Ingrese el id de la pelicula a crear/actualizar",required=true ) @PathVariable("idPelicula") String idPelicula,
+    ResponseEntity<Void> crearActualizarPelicula(@ApiParam(value = "Ingrese el id de la pelicula por el cual desea actualizar",required=true ) @PathVariable("idPelicula") String idPelicula,
         @ApiParam(value = "Pelicula a crear"  ) @RequestBody Pelicula pelicula);
 
 }

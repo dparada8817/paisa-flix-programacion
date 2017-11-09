@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.api.PeliculaApiController;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 /**
  * Pelicula
@@ -18,6 +22,12 @@ public class Pelicula extends Programa   {
   public Pelicula idPelicula(String idPelicula) {
     this.idPelicula = idPelicula;
     return this;
+  }
+
+
+  public Pelicula(String idPelicula) {
+    this.idPelicula = idPelicula;
+    add(linkTo(methodOn(PeliculaApiController.class).buscarPeliculaPorId(getIdPelicula())).withSelfRel());
   }
 
   /**

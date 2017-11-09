@@ -1,19 +1,19 @@
 Danny Mejia
 Santos Valdes
-David ....
+David Parada
 
 --------------------------------------------------------------------------------
 GET-----------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 
-CON LINKS	http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/programacion		//Listar Todas las series y peliculas
-CON LINKS	http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/pelicula			//todas la peliculas
-NO APLICA	http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/pelicula/pe1		//una pelicula (pe1 a pe5)
-CON LINKS	http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/serie				//todas la series
-CON LINKS	http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/serie/se1			//una serie (se1 a se5)
-CON LINKS	http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/serie/se1/capitulo	//capitulos de una serie
-NO APLICA	http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/capitulo/se2T1E1	//un capitulo (serie 2 capitulo: Temporada 1,Episodio 1)
+CON LINKS	http://localhost:8080/ProgramacionApi/programacion		//Listar Todas las series y peliculas
+CON LINKS	http://localhost:8080/ProgramacionApi/pelicula			//todas la peliculas
+NO APLICA	http://localhost:8080/ProgramacionApi/pelicula/pe1		//una pelicula (pe1 a pe5)
+CON LINKS	http://localhost:8080/ProgramacionApi/serie				//todas la series
+CON LINKS	http://localhost:8080/ProgramacionApi/serie/se1			//una serie (se1 a se5)
+CON LINKS	http://localhost:8080/ProgramacionApi/serie/se1/capitulo	//capitulos de una serie
+NO APLICA	http://localhost:8080/ProgramacionApi/serie/se2/capitulo/se2T1E2	//un capitulo (serie 2 capitulo: Temporada 1,Episodio 1)
 
 
 --------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ PUT-----------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 
-http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/pelicula/pe20				//Crea nueva pelicula
+http://localhost:8080/ProgramacionApi/pelicula/pe20				//Crea nueva pelicula
 {
   "categoria": "Anime,  Acción, ficción",
   "descripcion": "Protectores intergalacticos",
@@ -35,11 +35,11 @@ http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/pelicula/pe20				//Crea nuev
 
 
 
-http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/pelicula/pe20				//ya la encuentra
+http://localhost:8080/ProgramacionApi/pelicula/pe20				//ya la encuentra
 
 
 
-http://localhost:8080/santosvaldesm/PaisaFlix/1.0.0/pelicula/pe20				//Actualiza pelicula
+http://localhost:8080/ProgramacionApi/pelicula/pe20				//Actualiza pelicula
 {
   "categoria": "Solo Anime",
   "descripcion": "intergalacticos Protectores",

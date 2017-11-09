@@ -6,14 +6,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.api.SerieApiController;
 import io.swagger.model.Capitulo;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.ResourceSupport;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 /**
  * Serie
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-11-06T16:51:18.406Z")
 
-public class Serie extends Programa   {
+public class Serie extends ResourceSupport {
   @JsonProperty("idSerie")
   private String idSerie = null;
 
@@ -32,6 +38,11 @@ public class Serie extends Programa   {
   public Serie idSerie(String idSerie) {
     this.idSerie = idSerie;
     return this;
+  }
+
+  public Serie(String idSerie) {
+    this.idSerie = idSerie;
+    add(linkTo(methodOn(SerieApiController.class).buscarSeriePorId(getIdSerie())).withSelfRel());
   }
 
   /**
